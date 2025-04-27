@@ -135,7 +135,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://agroferfertilizers12.up.railway.app', 
     'https://agroferfertilizers1288.up.railway.app', 
     'https://greengrowfertilizer.shop', 
-    'www.greengrowfertilizer.shop'
+    'www.greengrowfertilizer.shop',
+    'https://www.greengrowfertilizer.shop'
 ]
 
 MEDIA_URL = '/media/'
