@@ -33,8 +33,8 @@ def blog(request):
 def blog_detail(request, post_id):
     post = get_object_or_404(BlogPost, id=post_id)
     # Fetch related posts (same category, excluding current post)
-    related_posts = BlogPost.objects.filter(category=post.category).exclude(id=post.id)[:2]
-    return render(request, 'blog_detail.html', {'post': post, 'related_posts': related_posts})
+    # related_posts = BlogPost.objects.filter(category=post.category).exclude(id=post.id)[:2]
+    return render(request, 'blog_detail.html', {'post': post})
 
 def contact(request):
     if request.method == 'POST':
