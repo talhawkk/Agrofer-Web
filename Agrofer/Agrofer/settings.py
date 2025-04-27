@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-3!=06$zb#d5ccdkhev#ep4e70y$(kqx&)-*pzx@r-^v1+9))n-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'agroferfertilizers.up.railway.app', 'greengrowfertilizer.shop', 'agroferfertilizers12.up.railway.app']  # Simplified for development
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'agroferfertilizers.up.railway.app', 'greengrowfertilizer.shop', 'agroferfertilizers12.up.railway.app','www.greengrowfertilizer.shop']  # Simplified for development
 
 # Application definition
 
@@ -135,6 +135,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://agroferfertilizers12.up.railway.app', 
     'https://agroferfertilizers1288.up.railway.app', 
     'https://greengrowfertilizer.shop', 
+    'www.greengrowfertilizer.shop'
 ]
 
 MEDIA_URL = '/media/'
