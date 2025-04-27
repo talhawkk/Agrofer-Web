@@ -11,46 +11,64 @@
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <!-- Navbar -->
-    <nav class="bg-transparent text-white p-4 absolute top-0 w-full z-50">
-        <div class="container mx-auto flex justify-between items-center flex-wrap">
-            <a href="{% url 'home' %}" class="flex items-center">
-                <img src="/static/agrofer_logo.png" alt="Agrofer Logo" class="h-24 w-auto  drop-shadow-lg"> <!-- 🔼 Increased from h-16 to h-20 -->
-                <span class="text-2xl font-extrabold text-white ml-3 tracking-wide">Agrofer</span> <!-- 🔼 Size, weight, spacing -->
-            </a>
-            <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-            <div id="nav-menu" class="hidden md:flex md:items-center w-full md:w-auto mt-4 md:mt-0">
-                <div class="flex flex-col md:flex-row md:space-x-6 text-base font-semibold w-full md:w-auto">
-                    <a href="{% url 'home' %}" class="block py-2 md:py-0 text-white hover:text-green-300 transition {% if request.path == '/' %}font-bold border-b-2 border-green-300 text-green-300{% endif %}">Home</a>
-                    <a href="{% url 'about' %}" class="block py-2 md:py-0 text-white hover:text-green-300 transition {% if request.path == '/about/' %}font-bold border-b-2 border-green-300 text-green-300{% endif %}">About</a>
-                    <a href="{% url 'products' %}" class="block py-2 md:py-0 text-white hover:text-green-300 transition {% if request.path == '/products/' %}font-bold border-b-2 border-green-300 text-green-300{% endif %}">Products</a>
-                    <a href="{% url 'process' %}" class="block py-2 md:py-0 text-white hover:text-green-300 transition {% if request.path == '/process/' %}font-bold border-b-2 border-green-300 text-green-300{% endif %}">Our Process</a>
-                    <a href="{% url 'aim' %}" class="block py-2 md:py-0 text-white hover:text-green-300 transition {% if request.path == '/aim/' %}font-bold border-b-2 border-green-300 text-green-300{% endif %}">Our Aim</a>
-                    <a href="{% url 'blog' %}" class="block py-2 md:py-0 text-white hover:text-green-300 transition {% if request.path == '/blog/' %}font-bold border-b-2 border-green-300 text-green-300{% endif %}">Blog</a>
-                    <a href="{% url 'contact' %}" class="block py-2 md:py-0 text-white hover:text-green-300 transition {% if request.path == '/contact/' %}font-bold border-b-2 border-green-300 text-green-300{% endif %}">Contact</a>
+<!-- Navbar -->
+<nav class="bg-transparent text-white p-4 absolute top-0 w-full z-50">
+    <div class="container mx-auto flex justify-between items-center flex-wrap">
+        <a href="{% url 'home' %}" class="flex items-center">
+            <img src="/static/agrofer_logo.png" alt="Agrofer Logo" class="h-24 w-auto drop-shadow-lg">
+            <span class="text-2xl font-extrabold text-white ml-3 tracking-wide">Agrofer</span>
+        </a>
+        <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        <div id="nav-menu" class="hidden fixed inset-0 bg-black bg-opacity-50 md:bg-transparent md:static md:flex md:items-center md:w-auto md:mt-100 md:mt-100">
+            <div class="flex flex-col w-2/3 md:w-auto h-full bg-green-900 md:bg-transparent rounded-l-lg md:rounded-none shadow-lg md:shadow-none absolute right-0 top-100 transform translate-x-full md:transform-none transition-transform duration-300">
+                <div class="flex justify-end p-4 md:hidden">
+                    <button onclick="toggleMenu()" class="text-white focus:outline-none">
+                        <svg class="w-6 h-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-6 text-base font-semibold mt-10 md:mt-0">
+                    <a href="{% url 'home' %}" class="block pt-12 pb-2 px-6 md:px-0 text-white hover:text-green-300 transition border-l-4 md:border-l-0 md:border-b-2 {% if request.path == '/' %}font-bold border-green-300 text-green-300{% else %}border-transparent{% endif %}">Home</a>
+                    <a href="{% url 'about' %}" class="block pt-12 pb-2 px-6 md:px-0 text-white hover:text-green-300 transition border-l-4 md:border-l-0 md:border-b-2 {% if request.path == '/about/' %}font-bold border-green-300 text-green-300{% else %}border-transparent{% endif %}">About</a>
+                    <a href="{% url 'products' %}" class="block pt-12 pb-2 px-6 md:px-0 text-white hover:text-green-300 transition border-l-4 md:border-l-0 md:border-b-2 {% if request.path == '/products/' %}font-bold border-green-300 text-green-300{% else %}border-transparent{% endif %}">Products</a>
+                    <a href="{% url 'process' %}" class="block pt-12 pb-2 px-6 md:px-0 text-white hover:text-green-300 transition border-l-4 md:border-l-0 md:border-b-2 {% if request.path == '/process/' %}font-bold border-green-300 text-green-300{% else %}border-transparent{% endif %}">Our Process</a>
+                    <a href="{% url 'aim' %}" class="block pt-12 pb-2 px-6 md:px-0 text-white hover:text-green-300 transition border-l-4 md:border-l-0 md:border-b-2 {% if request.path == '/aim/' %}font-bold border-green-300 text-green-300{% else %}border-transparent{% endif %}">Our Aim</a>
+                    <a href="{% url 'blog' %}" class="block pt-12 pb-2 px-6 md:px-0 text-white hover:text-green-300 transition border-l-4 md:border-l-0 md:border-b-2 {% if request.path == '/blog/' %}font-bold border-green-300 text-green-300{% else %}border-transparent{% endif %}">Blog</a>
+                    <a href="{% url 'contact' %}" class="block pt-12 pb-2 px-6 md:px-0 text-white hover:text-green-300 transition border-l-4 md:border-l-0 md:border-b-2 {% if request.path == '/contact/' %}font-bold border-green-300 text-green-300{% else %}border-transparent{% endif %}">Contact</a>
                 </div>
             </div>
         </div>
-    </nav>
-    
-    <script>
-        function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('hidden');
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('hidden');
+        const menuContent = navMenu.querySelector('div');
+        if (!navMenu.classList.contains('hidden')) {
+            menuContent.classList.remove('translate-x-full');
+            menuContent.classList.add('translate-x-0');
+        } else {
+            menuContent.classList.remove('translate-x-0');
+            menuContent.classList.add('translate-x-full');
         }
-        // Auto-scroll to content for non-home pages
-        window.addEventListener('load', () => {
-            if (window.location.pathname !== '/') {
-                const content = document.getElementById('page-content');
-                if (content) {
-                    content.scrollIntoView({ behavior: 'smooth' });
-                }
+    }
+    // Auto-scroll to content for non-home pages
+    window.addEventListener('load', () => {
+        if (window.location.pathname !== '/') {
+            const content = document.getElementById('page-content');
+            if (content) {
+                content.scrollIntoView({ behavior: 'smooth' });
             }
-        });
-    </script>
+        }
+    });
+</script>
 
 <!-- Hero Section -->
 <section class="relative w-screen h-screen bg-cover bg-center" style="background-image: url('/static/image3.avif')">
