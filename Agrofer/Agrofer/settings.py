@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3!=06$zb#d5ccdkhev#ep4e70y$(kqx&)-*pzx@r-^v1+9))n-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'agroferfertilizers.up.railway.app', 'greengrowfertilizer.shop', 'agroferfertilizers12.up.railway.app','www.greengrowfertilizer.shop']  # Simplified for development
 
